@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+        .container {
+            background-color: grey;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            width: 250px;
+            height: 100%;
+        }
+
+        .row {
+            background-color: rgb(48, 48, 48);
+            height: 100px;
+        }
+
+        p{
+            color: #ffff;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <p>item 1</p>
+            <p>slide 1</p>
+            <p>item 2</p>
+            <p>slid 2</p>
+        </div>
+    </div>
+    <script>
+  $(".container").click(function() {
+      $(this).animate({ "left": '0px' }, 1000);
+    });
+
+    $(".container").mouseleave(function() {
+      $(this).animate({ "left": '-200px' }, 1000);
+    });
+    $(".container p:nth-child(odd)").click(function() {
+    $(this).next().slideToggle();
+  });
+    </script>
+</body>
+
+</html>
